@@ -25,14 +25,12 @@ const ExpenseForm = (props) => {
             date: new Date(enteredDate)
         }
 
-        props.onAddExpense(expenseData)
+        props.onAddExpense(expenseData);
+        props.onSwitchFormActive();
 
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
-    }
-    const switchFormActiveHandler = () => {
-        props.onSwitchFormActive();
     }
 
     return (
@@ -58,7 +56,7 @@ const ExpenseForm = (props) => {
                 </div>
             </div>
             <div className="new-expense__actions">
-                <button onClick={switchFormActiveHandler}>Close</button>
+                <button type="button" onClick={props.onSwitchFormActive}>Cancel</button>
                 <button type="submit">Add expense</button>
             </div>
         </form>

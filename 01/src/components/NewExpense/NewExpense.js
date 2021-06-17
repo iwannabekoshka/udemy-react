@@ -21,18 +21,17 @@ const NewExpense = (props) => {
         })
     }
 
-    let content = <button onClick={switchFormActiveHandler}>Add new expense</button>;
-    if (formActive) {
-        content =
-            <ExpenseForm
-                onAddExpense={addExpenseHandler}
-                onSwitchFormActive={switchFormActiveHandler}
-            />
-    };
-
     return (
         <div className="new-expense">
-            {content}
+            {!formActive &&
+                <button onClick={switchFormActiveHandler}>Add new expense</button>
+            }
+            {formActive &&
+                <ExpenseForm
+                    onAddExpense={addExpenseHandler}
+                    onSwitchFormActive={switchFormActiveHandler}
+                />
+            }
         </div>
     )
 }
