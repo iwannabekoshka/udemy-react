@@ -37,11 +37,19 @@ function App() {
             return [newExpense, ...prevExpenses];
         });
     }
+    const clickRemoveHandler = (id) => {
+        setExpenses((prevExpenses) => {
+            return prevExpenses.filter((expense) => expense.id !== id);
+        });
+    }
 
     return (
         <div>
             <NewExpense onAddExpense={addExpenseHandler}/>
-            <Expenses expenses={expenses}/>
+            <Expenses
+                expenses={expenses}
+                onClickRemove={clickRemoveHandler}
+            />
         </div>
     );
 }

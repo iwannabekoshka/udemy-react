@@ -12,6 +12,9 @@ function Expenses(props) {
     const changeYearHandler = (year) => {
         setYear(year);
     }
+    const clickRemoveHandler = (id) => {
+        props.onClickRemove(id)
+    }
 
     return (
         <Card className="expenses">
@@ -19,9 +22,11 @@ function Expenses(props) {
             {props.expenses.map(expense =>
                 <ExpenseItem
                     key={expense.id}
+                    id={expense.id}
                     title={expense.title}
                     amount={expense.amount}
                     date={expense.date}
+                    onClickRemove={clickRemoveHandler}
                 />
             )}
         </Card>
