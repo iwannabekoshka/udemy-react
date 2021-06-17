@@ -12,8 +12,8 @@ function Expenses(props) {
     const changeYearHandler = (year) => {
         setYear(year);
     }
-    const clickRemoveHandler = (id) => {
-        props.onClickRemove(id)
+    const removeExpenseHandler = (id) => {
+        props.onRemoveExpense(id)
     }
 
     return (
@@ -26,7 +26,7 @@ function Expenses(props) {
                     title={expense.title}
                     amount={expense.amount}
                     date={expense.date}
-                    onClickRemove={clickRemoveHandler}
+                    onRemoveExpense={removeExpenseHandler}
                 />
             )}
         </Card>

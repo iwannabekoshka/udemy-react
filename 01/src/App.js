@@ -37,7 +37,7 @@ function App() {
             return [newExpense, ...prevExpenses];
         });
     }
-    const clickRemoveHandler = (id) => {
+    const removeExpenseHandler = (id) => {
         setExpenses((prevExpenses) => {
             return prevExpenses.filter((expense) => expense.id !== id);
         });
@@ -48,7 +48,7 @@ function App() {
             <NewExpense onAddExpense={addExpenseHandler}/>
             <Expenses
                 expenses={expenses}
-                onClickRemove={clickRemoveHandler}
+                onRemoveExpense={removeExpenseHandler}
             />
         </div>
     );
