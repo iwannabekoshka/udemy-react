@@ -36,12 +36,12 @@ function App() {
         setExpenses((prevExpenses) => {
             return [newExpense, ...prevExpenses];
         });
-    }
+    };
     const removeExpenseHandler = (id) => {
         setExpenses((prevExpenses) => {
             return prevExpenses.filter((expense) => expense.id !== id);
         });
-    }
+    };
 
     return (
         <div>
