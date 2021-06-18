@@ -1,0 +1,14 @@
+li {
+    margin-bottom: 1rem;
+    text-align: center;
+
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem 1rem rgba(100, 149, 237, .3);
+}
+li:hover {
+    background-color: rgba(100, 149, 237, .1);
+}
+li:active {
+    background-color: rgba(100, 149, 237, .2);
+}

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 
 import './TodoAdd.css';
 
@@ -7,11 +7,14 @@ const TodoAdd = props => {
     const [focusActive, setFocusActive] = useState(false);
     const [inputUnderline, setInputUnderline] = useState('');
 
+    const descRef = useRef();
+
     const changeTodoHandler = event => {
         setTodoText(event.target.value);
     }
     const addTodoHandler = event => {
         event.preventDefault();
+        if (todoText.length === 0) return;
 
         const todo = {
             id: Math.random(),
@@ -20,6 +23,8 @@ const TodoAdd = props => {
 
         props.onAddTodo(todo);
         setTodoText('');
+
+        descRef.current.blur();
     }
     const switchFocusHandler = event => {
         setFocusActive((prevFocusActive) => {return !prevFocusActive});
@@ -36,6 +41,7 @@ const TodoAdd = props => {
                     onChange={changeTodoHandler}
                     onFocus={switchFocusHandler}
                     onBlur={switchFocusHandler}
+                    ref={descRef}
                 />
             </div>
 
