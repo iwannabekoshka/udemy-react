@@ -6,9 +6,12 @@
 html {
   font-size: 62.5%;
 }
-body {
+body, input {
   font-size: 2rem;
   font-family: monospace;
+}
+ul {
+  list-style: none;
 }
 
 .app {

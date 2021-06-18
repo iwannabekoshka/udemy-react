@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './TodoItem.css';
+
 const TodoItem = props => {
     const deleteTodoHandler = event => {
         props.onDeleteTodo(props.id);

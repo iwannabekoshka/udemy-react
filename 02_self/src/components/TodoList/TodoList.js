@@ -2,6 +2,8 @@ import React from 'react';
 
 import TodoItem from "../TodoItem/TodoItem";
 
+import './TodoList.css';
+
 const TodoList = props => {
     const deleteTodoHandler = id => {
         props.onDeleteTodo(id);
