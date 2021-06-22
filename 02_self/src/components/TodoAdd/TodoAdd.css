@@ -19,6 +19,9 @@
 
     transition: .3s;
 }
+.todo-add input::placeholder {
+    color: #ccc;
+}
 .todo-add input:focus {
     box-shadow: none;
 }
@@ -46,9 +49,22 @@
 
 .todo-add button {
     border: none;
+    outline: none;
     border-radius: 0;
     background-color: cornflowerblue;
     color: white;
     font-size: 2rem;
     padding: 1rem 0;
+    cursor: pointer;
+
+    transition: .2s;
+}
+.todo-add button:active {
+    background-color: hsl(219, 79%, 60%);
+    transform: translateY(1px);
+}
+.todo-add button:hover,
+.todo-add button:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 .3rem 1rem rgba(100, 149, 237, .3);
 }

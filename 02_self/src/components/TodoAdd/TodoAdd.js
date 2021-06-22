@@ -42,6 +42,7 @@ const TodoAdd = props => {
                     onFocus={switchFocusHandler}
                     onBlur={switchFocusHandler}
                     ref={descRef}
+                    placeholder="Todo todo, of course"
                 />
             </div>
 
