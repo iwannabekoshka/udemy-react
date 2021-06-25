@@ -7,15 +7,19 @@ const UserAdd = props => {
 
 	const validateForm = (userName, userAge) => {
 		if ( !userName.trim() && !userAge.trim() ) {
-			alert('Please, enter Your name and age.');
+			alert('Please, enter User name and age.');
 			return false;
 		}
 		if ( !userName.trim() ) {
-			alert('Please, enter Your name.');
+			alert('Please, enter User name.');
 			return false;
 		}
 		if ( !userAge.trim() ) {
-			alert('Please, enter Your age.');
+			alert('Please, enter User age.');
+			return false;
+		}
+		if (+userAge < 0) {
+			alert(`Age shouldn't be below zero.`);
 			return false;
 		}
 
@@ -31,7 +35,17 @@ const UserAdd = props => {
 	const addUserHandler = event => {
 		event.preventDefault();
 
-		validateForm(userName, userAge);
+		if ( !validateForm(userName, userAge) ) return;
+
+		const userObj = {
+			id: Math.random().toString(),
+			name: userName,
+			age: userAge
+		}
+		props.onAddUser(userObj);
+
+		setUserName('');
+		setUserAge('');
 	}
 
 	return (

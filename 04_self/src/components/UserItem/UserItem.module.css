@@ -1,0 +1,14 @@
+.user-item {
+	padding: 1rem;
+	border: 2px solid cornflowerblue;
+	cursor: pointer;
+
+	transition: .1s;
+}
+.user-item:not(:last-child) {
+	margin-bottom: 1rem;
+}
+.user-item:hover {
+	background-color: cornflowerblue;
+	color: white;
+}
