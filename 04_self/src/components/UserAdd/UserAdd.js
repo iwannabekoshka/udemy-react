@@ -7,19 +7,33 @@ const UserAdd = props => {
 
 	const validateForm = (userName, userAge) => {
 		if ( !userName.trim() && !userAge.trim() ) {
-			props.onOpenModal('Please, enter User name and age.');
+			props.onOpenModal({
+				title: 'Invalid input',
+				text: 'Please, enter User name and age.'
+			});
 			return false;
 		}
 		if ( !userName.trim() ) {
-			props.onOpenModal('Please, enter User name.');
+			props.onOpenModal({
+				title: 'Invalid input',
+				text: 'Please, enter User name.'
+			});
 			return false;
 		}
 		if ( !userAge.trim() ) {
 			props.onOpenModal('Please, enter User age.');
+			props.onOpenModal({
+				title: 'Invalid input',
+				text: 'Please, enter User age.'
+			});
 			return false;
 		}
 		if (+userAge < 0) {
 			props.onOpenModal(`Age shouldn't be below zero.`);
+			props.onOpenModal({
+				title: 'Invalid input',
+				text: `Age shouldn't be below zero.`
+			});
 			return false;
 		}
 
@@ -59,7 +73,7 @@ const UserAdd = props => {
 				/>
 			</label>
 			<label>
-				<span>Age</span>
+				<span>Age (years)</span>
 				<input
 					type="number"
 					value={userAge}

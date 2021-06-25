@@ -3,7 +3,11 @@ import styles from './UserItem.module.css';
 
 const UserItem = props => {
 	const removeUserHandler = event => {
-		props.onRemoveUser(props.id)
+		props.onRemoveUser({
+			id: props.user.id,
+			title: `You're monster!`,
+			text: `You have deleted ${props.user.name}! It was only ${props.user.age} years old... :(`
+		})
 	}
 
 	return (
@@ -11,7 +15,7 @@ const UserItem = props => {
 			className={styles['user-item']}
 			onClick={removeUserHandler}
 		>
-			{props.name}, age: {props.age}
+			{props.user.name}, age: {props.user.age}
 		</li>
 	)
 }

@@ -19,27 +19,37 @@ const USER_DATA = [
 
 function App() {
 	const [users, setUsers] = useState(USER_DATA);
-	const [modalVisible, setModalVisible] = useState(false);
-	const [modalText, setModalText] = useState('');
+	const [modalValues, setModalValues] = useState({});
 
-	const removeUserHandler = id => {
+	const removeUserHandler = userRemoved => {
+		openModalHandler(userRemoved);
+
 		setUsers((prevUsers) => {
-			return prevUsers.filter(user => user.id !== id);
+			return prevUsers.filter(user => user.id !== userRemoved.id);
 		})
 	}
 	const addUserHandler = user => {
 		setUsers((prevUsers) => {
 			return [user, ...prevUsers];
 		})
+
+		checkIfUserKoshka(user);
 	}
-	const openModalHandler = text => {
-		setModalText(text);
-		switchModalHandler();
+
+	const openModalHandler = textObj => {
+		setModalValues(textObj);
 	}
-	const switchModalHandler = event => {
-		setModalVisible((prev) => {
-			return !prev;
-		});
+	const closeModalHandler = event => {
+		setModalValues({});
+	}
+
+	const checkIfUserKoshka = user => {
+		if (user.name === 'Nastya' && user.age === '21') {
+			openModalHandler({
+				title: 'Congratulations!',
+				text: 'You are the koshka!'
+			})
+		}
 	}
 
 	return (
@@ -53,9 +63,8 @@ function App() {
 				onRemoveUser={removeUserHandler}
 			/>
 			<Modal
-				visible={modalVisible}
-				text={modalText}
-				onCloseModale={switchModalHandler}
+				text={modalValues}
+				onCloseModale={closeModalHandler}
 			/>
 		</div>
 	);

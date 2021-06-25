@@ -3,8 +3,8 @@ import styles from './UserList.module.css';
 import UserItem from "../UserItem/UserItem";
 
 const UserList = props => {
-	const removeUserHandler = id => {
-		props.onRemoveUser(id);
+	const removeUserHandler = userObj => {
+		props.onRemoveUser(userObj);
 	}
 
 	let content = <p>No users :(</p>;
@@ -13,9 +13,7 @@ const UserList = props => {
 			return (
 				<UserItem
 					key={user.id}
-					id={user.id}
-					name={user.name}
-					age={user.age}
+					user={user}
 					onRemoveUser={removeUserHandler}
 				/>
 			)
