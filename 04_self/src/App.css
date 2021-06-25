@@ -26,7 +26,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 
-	padding-top: 10rem;
+	padding-top: 20rem;
 	margin: 0 auto;
 	width: 400px;
 }
@@ -35,4 +35,20 @@ body {
 }
 .app > *:not(:last-child) {
 	margin-bottom: 4rem;
+}
+
+/* BUTTON */
+.button {
+	border: none;
+	outline: none;
+	background-color: cornflowerblue;
+	color: white;
+	font-size: 2rem;
+	padding: 1rem 2rem;
+	cursor: pointer;
+
+	transition: .1s;
+}
+.button:hover {
+	background-color: #4c84ea;
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './UserList.module.css';
 import UserItem from "../UserItem/UserItem";
 

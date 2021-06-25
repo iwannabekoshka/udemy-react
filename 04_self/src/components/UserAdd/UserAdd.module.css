@@ -27,18 +27,3 @@
 .user-add label input:focus {
 	outline: 1px solid cornflowerblue;
 }
-
-.user-add button {
-	border: none;
-	outline: none;
-	background-color: cornflowerblue;
-	color: white;
-	font-size: 2rem;
-	padding: 1rem 0;
-	cursor: pointer;
-
-	transition: .1s;
-}
-.user-add button:hover {
-	background-color: #4c84ea;
-}

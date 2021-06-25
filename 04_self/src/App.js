@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import UserAdd from "./components/UserAdd/UserAdd";
 import UserList from "./components/UserList/UserList";
+import Modal from "./components/Modal/Modal";
 
 const USER_DATA = [
 	{
@@ -18,6 +19,8 @@ const USER_DATA = [
 
 function App() {
 	const [users, setUsers] = useState(USER_DATA);
+	const [modalVisible, setModalVisible] = useState(false);
+	const [modalText, setModalText] = useState('');
 
 	const removeUserHandler = id => {
 		setUsers((prevUsers) => {
@@ -26,18 +29,33 @@ function App() {
 	}
 	const addUserHandler = user => {
 		setUsers((prevUsers) => {
-			return [user,...prevUsers];
+			return [user, ...prevUsers];
 		})
+	}
+	const openModalHandler = text => {
+		setModalText(text);
+		switchModalHandler();
+	}
+	const switchModalHandler = event => {
+		setModalVisible((prev) => {
+			return !prev;
+		});
 	}
 
 	return (
 		<div className="app">
 			<UserAdd
 				onAddUser={addUserHandler}
+				onOpenModal={openModalHandler}
 			/>
 			<UserList
 				users={users}
 				onRemoveUser={removeUserHandler}
+			/>
+			<Modal
+				visible={modalVisible}
+				text={modalText}
+				onCloseModale={switchModalHandler}
 			/>
 		</div>
 	);
