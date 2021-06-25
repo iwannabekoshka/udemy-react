@@ -3,7 +3,6 @@
 	flex-direction: column;
 
 	padding: 2rem;
-	border-radius: 2rem;
 	box-shadow: 0 .5rem 1rem rgba(0,0,0, .1);
 }
 .user-add > *:not(:last-child) {
