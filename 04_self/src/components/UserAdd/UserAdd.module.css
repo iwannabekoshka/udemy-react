@@ -1,0 +1,44 @@
+.user-add {
+	display: flex;
+	flex-direction: column;
+
+	padding: 2rem;
+	border-radius: 2rem;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0, .1);
+}
+.user-add > *:not(:last-child) {
+	margin-bottom: 1rem;
+}
+.user-add label {
+	display: flex;
+	flex-direction: column;
+}
+
+.user-add label span {
+	margin-bottom: .2rem;
+}
+
+.user-add label input {
+	border: 1px solid cornflowerblue;
+	outline: none;
+	font-size: 1.8rem;
+	padding: .5rem 1rem;
+}
+.user-add label input:focus {
+	outline: 1px solid cornflowerblue;
+}
+
+.user-add button {
+	border: none;
+	outline: none;
+	background-color: cornflowerblue;
+	color: white;
+	font-size: 2rem;
+	padding: 1rem 0;
+	cursor: pointer;
+
+	transition: .1s;
+}
+.user-add button:hover {
+	background-color: #4c84ea;
+}
