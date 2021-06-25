@@ -33,7 +33,7 @@ function App() {
 			return [user, ...prevUsers];
 		})
 
-		checkIfUserKoshka(user);
+		checkIfUserElite(user);
 	}
 
 	const openModalHandler = textObj => {
@@ -43,11 +43,17 @@ function App() {
 		setModalValues({});
 	}
 
-	const checkIfUserKoshka = user => {
+	const checkIfUserElite = user => {
 		if (user.name === 'Nastya' && user.age === '21') {
 			openModalHandler({
 				title: 'Congratulations!',
 				text: 'You are the koshka!'
+			})
+		}
+		if (user.name === 'Sasha' && user.age === '23') {
+			openModalHandler({
+				title: 'Congratulations!',
+				text: 'You are the best programmer in the WORLD!'
 			})
 		}
 	}
