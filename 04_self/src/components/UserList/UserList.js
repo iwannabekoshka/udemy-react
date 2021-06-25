@@ -24,6 +24,7 @@ const UserList = props => {
 
 	return (
 		<ul className={styles['user-list']}>
+			<h2 className={styles['user-title']}>Users</h2>
 			{content}
 		</ul>
 	)
