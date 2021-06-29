@@ -55,7 +55,7 @@ const AddUser = props => {
 	}
 
 	return (
-		<div>
+		<React.Fragment>
 			{message &&
 				<Modal
 					title={message.title}
@@ -85,7 +85,7 @@ const AddUser = props => {
 					<Button type="submit">Add User</Button>
 				</form>
 			</Card>
-		</div>
+		</React.Fragment>
 	)
 }
 
