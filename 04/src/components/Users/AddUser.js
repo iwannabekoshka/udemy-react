@@ -32,6 +32,12 @@ const AddUser = props => {
 
 		if ( !validateForm() ) return;
 
+		props.onAddUser({
+			id: Date.now().toString(),
+			name: username,
+			age: age
+		})
+
 		setUsername('');
 		setAge('');
 	}
